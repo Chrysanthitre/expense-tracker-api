@@ -3,7 +3,7 @@
 A REST API for personal finance management — tracking expenses 
 by category with monthly analytics and reporting.
 
-> 🚧 Currently in development
+> Currently in development
 
 ## Tech Stack
 - Java, Spring Boot
