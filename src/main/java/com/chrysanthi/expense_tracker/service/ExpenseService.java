@@ -36,4 +36,12 @@ public class ExpenseService {
         expenseRepository.deleteById(id);
     }
 
+    public List<Object[]> getTotalByCategory() {
+        return expenseRepository.getTotalByCategory();
+    }
+
+    public List<Object[]> getTotalByMonth() {
+        return expenseRepository.getTotalByMonth();
+    }
+
 }

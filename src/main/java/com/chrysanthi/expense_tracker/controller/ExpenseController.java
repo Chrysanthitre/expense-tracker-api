@@ -22,7 +22,7 @@ public class ExpenseController {
 
     @Autowired
     private ExpenseService expenseService;
-    
+
     @GetMapping
     public List<ExpenseEntity> getAllExpenses() {
         return expenseService.getAllExpenses();
@@ -32,7 +32,7 @@ public class ExpenseController {
     public Optional<ExpenseEntity> getById(@PathVariable Long id) {
         return expenseService.getExpenseById(id);
     }
-    
+
     @PostMapping
     public ExpenseEntity createExpense(@RequestBody ExpenseEntity expense) {
         return expenseService.createExpense(expense);
@@ -40,7 +40,7 @@ public class ExpenseController {
 
     @PutMapping("/{id}")
     public ExpenseEntity updateExpense(@PathVariable Long id, @RequestBody ExpenseEntity expense) {
-        return expenseService.updateExpense(id,expense);
+        return expenseService.updateExpense(id, expense);
     }
 
     @DeleteMapping("/{id}")
@@ -48,8 +48,14 @@ public class ExpenseController {
         expenseService.deleteExpense(id);
     }
 
+    @GetMapping("/analytics/category")
+    public List<Object[]> getTotalByCategory() {
+        return expenseService.getTotalByCategory();
+    }
+
+    @GetMapping("/analytics/month")
+    public List<Object[]> getTotalByMonth() {
+        return expenseService.getTotalByMonth();
+    }
+
 }
-
-
-
-
