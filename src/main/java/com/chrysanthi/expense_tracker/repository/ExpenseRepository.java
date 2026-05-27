@@ -16,5 +16,5 @@ public interface ExpenseRepository extends JpaRepository<ExpenseEntity, Long> {
 
     @Query("SELECT MONTH(e.date), SUM(e.amount) FROM ExpenseEntity e GROUP BY MONTH(e.date)")
     List<Object[]> getTotalByMonth();
-    
+
 }
